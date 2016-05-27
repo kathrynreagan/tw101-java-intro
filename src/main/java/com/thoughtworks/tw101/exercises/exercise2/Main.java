@@ -7,7 +7,13 @@ public class Main {
     public static void main(String[] args) {
 
         Accumulator accumulator = new Accumulator();
+        int timesToCallIncrement = 5;
 
+        for(int i = 0; i < timesToCallIncrement; i++){
+            accumulator.increment();
+        }
 
+        int total = accumulator.total();
+        System.out.println("The increment method was called " + total + " times.");
     }
 }
