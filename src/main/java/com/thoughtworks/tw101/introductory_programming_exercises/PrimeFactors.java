@@ -6,14 +6,35 @@ package com.thoughtworks.tw101.introductory_programming_exercises;
 //
 //  For example, generate(1) should return an empty list and generate(30) should return the numbers: 2,3,5.
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class PrimeFactors {
     public static void main(String[] args) {
         List<Integer> primeFactors = generate(30);
+        for(Integer prime : primeFactors){
+            System.out.print(prime + " ");
+        }
     }
 
     private static List<Integer> generate(int n) {
-        return null;
+        List<Integer> primes = new LinkedList<Integer>();
+
+        while(n%2 == 0){
+            primes.add(2);
+            n /= 2;
+        }
+
+        // now n is odd
+        for(int i = 3; i <= Math.sqrt(n); i += 2){
+            while(n%i == 0){
+                primes.add(i);
+                n /= i;
+            }
+        }
+        if(n > 2){
+            primes.add(n);
+        }
+        return primes;
     }
 }
