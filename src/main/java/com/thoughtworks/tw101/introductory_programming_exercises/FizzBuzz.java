@@ -32,6 +32,23 @@ public class FizzBuzz {
     }
 
     private static void fizzBuzz() {
+        boolean isSpecial;
+
+        for(int i = 1; i <= 100; i++){
+            isSpecial = false;
+            if(i%3 == 0){
+                isSpecial = true;
+                System.out.print("Fizz");
+            }
+            if(i%5 == 0){
+                isSpecial = true;
+                System.out.print("Buzz");
+            }
+            if(!isSpecial) {
+                System.out.print(i);
+            }
+            System.out.println();
+        }
 
     }
 }
